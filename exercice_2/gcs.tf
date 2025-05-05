@@ -1,6 +1,6 @@
 resource "google_storage_bucket" "my-bucket" {
   project = local.project_id
-  name          = "${local.project_id}-test-bucket"
+  name          = "test-bucket"
   location      = "EU"
 }
 
@@ -8,7 +8,7 @@ resource "google_storage_bucket" "my-bucket" {
 #   for_each = local.buckets_variants
 #
 #   project = local.project_id
-#   name          = "${local.project_id}-test-bucket-${each.key}"
+#   name          = "atelier-terraform-test-bucket-${each.key}"
 #
 #   lifecycle_rule {
 #     action {
@@ -20,3 +20,10 @@ resource "google_storage_bucket" "my-bucket" {
 #   }
 #   location      = "EU"
 # }
+
+# resource "google_storage_bucket" "bucket-to-be-imported" {
+#   project = local.project_id
+#   name          = "atelier-terraform-bucket-created-in-console"
+#   location      = "EU"
+# }
+

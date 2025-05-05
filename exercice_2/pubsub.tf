@@ -3,6 +3,7 @@
 # }
 #
 # resource "google_pubsub_subscription" "example" {
+#  count = terraform.workspace == "prod"? 1 : 0
 #  for_each = toset(local.pubsub_subscribers)
 #
 #  name  = "${each.value}-subscription-${terraform.workspace}"
